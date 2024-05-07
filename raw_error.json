@@ -1,0 +1,21 @@
+{
+  "data": {
+    "launchPipelineExecution": {
+      "message": "dagster._check.CheckError: Failure condition: Unexpected dynamic output dependency in regular fan in, should have been caught at definition time.\n",
+      "stack": [
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_grpc/impl.py\", line 534, in get_external_execution_plan_snapshot\n    create_execution_plan(\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/api.py\", line 730, in create_execution_plan\n    return ExecutionPlan.build(\n           ^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/plan.py\", line 1056, in build\n    ).build()\n      ^^^^^^^\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/plan.py\", line 182, in build\n    self._build_from_sorted_nodes(\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/plan.py\", line 354, in _build_from_sorted_nodes\n    self._build_from_sorted_nodes(\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/plan.py\", line 354, in _build_from_sorted_nodes\n    self._build_from_sorted_nodes(\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/plan.py\", line 258, in _build_from_sorted_nodes\n    step_input_source = get_step_input_source(\n                        ^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/plan.py\", line 469, in get_step_input_source\n    return _step_input_source_from_multi_dep_def(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/plan.py\", line 559, in _step_input_source_from_multi_dep_def\n    check.failed(\n",
+        "  File \"/Users/hobofan/Library/Caches/pypoetry/virtualenvs/dagster-fan-in-repro-J-Y5pXQV-py3.11/lib/python3.11/site-packages/dagster/_check/__init__.py\", line 1606, in failed\n    raise CheckError(f\"Failure condition: {desc}\")\n"
+      ],
+      "errorChain": [],
+      "__typename": "PythonError"
+    }
+  }
+}
